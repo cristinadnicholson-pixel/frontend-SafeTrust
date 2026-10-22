@@ -79,9 +79,12 @@ export default function HelpIndexPage() {
 
           <div className="mt-12 space-y-12">
             {HELP_GROUPS.map((group) => (
-              <section key={group.title} aria-labelledby={`group-${group.title}`}>
+              <section
+                key={group.title}
+                aria-labelledby={`group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+              >
                 <h2
-                  id={`group-${group.title}`}
+                  id={`group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                   className="text-2xl font-semibold tracking-tight text-foreground"
                 >
                   {group.title}
