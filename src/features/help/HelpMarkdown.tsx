@@ -26,6 +26,7 @@ export function HelpMarkdown({ source }: { source: string }) {
         remarkPlugins={[remarkGfm]}
         skipHtml
         components={{
+          h1: () => null,
           h2: ({ children }) => {
             const heading = getNextHeading();
             return (
