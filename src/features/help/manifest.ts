@@ -68,7 +68,7 @@ export const HELP_TOPICS = [
   {
     slug: "escrow-explained",
     file: "escrow-explained.md",
-    title: "How escrow works",
+    title: "How escrow payments work",
     description: "How SafeTrust holds funds, releases them, and protects both guests and hosts.",
     audience: "everyone",
     related: ["getting-started", "troubleshooting"],
