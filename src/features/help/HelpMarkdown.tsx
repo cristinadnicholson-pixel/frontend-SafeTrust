@@ -100,8 +100,8 @@ export function HelpMarkdown({ source }: { source: string }) {
 
             return <>{children}</>;
           },
-          img: ({ src = "", alt = "" }) =>
-            isHelpImage(src) ? (
+          img: ({ src, alt = "" }) =>
+            typeof src === "string" && isHelpImage(src) ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={src}
