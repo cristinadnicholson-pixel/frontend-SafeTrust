@@ -12,7 +12,7 @@ When a guest books, the payment is held in escrow while the stay is pending. Thi
 
 ## Confirm the stay
 
-Once the stay is complete, SafeTrust releases the funds from escrow. Hosts do not start this release. If something changes, review the booking status and reach out through support if needed.
+Once the stay is complete, the funds in escrow are released only after the required booking milestone is approved and the platform completes the release. The release does not start automatically when the stay ends. If the payout is not released, review the booking status and contact support.
 
 ## Keep things up to date
 
