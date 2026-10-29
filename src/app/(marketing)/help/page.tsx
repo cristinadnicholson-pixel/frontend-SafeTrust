@@ -67,9 +67,7 @@ export default async function HelpIndexPage({
   searchParams: Promise<{ from?: string | string[] }>;
 }) {
   const { from } = await searchParams;
-  const returnPath = safeRentReturn(
-    typeof from === "string" ? from : undefined,
-  );
+  const returnPath = safeRentReturn(Array.isArray(from) ? from[0] : from);
 
   return (
     <>
