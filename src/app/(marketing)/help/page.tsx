@@ -5,6 +5,7 @@ import { PageContainer } from "@/components/layouts/PageContainer";
 import { HelpHeader } from "@/features/help/HelpHeader";
 import { HelpTopicLink } from "@/features/help/HelpTopicLink";
 import { HELP_TOPICS, type HelpTopic } from "@/features/help/manifest";
+import { safeRentReturn } from "@/features/help/return-target";
 
 const HELP_TOPICS_VIEW: readonly HelpTopic[] = HELP_TOPICS;
 
@@ -60,10 +61,19 @@ function TopicLinkFallback({
   );
 }
 
-export default function HelpIndexPage() {
+export default async function HelpIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ from?: string | string[] }>;
+}) {
+  const { from } = await searchParams;
+  const returnPath = safeRentReturn(
+    typeof from === "string" ? from : undefined,
+  );
+
   return (
     <>
-      <HelpHeader />
+      <HelpHeader returnPath={returnPath} />
       <main>
         <PageContainer className="py-10 sm:py-14">
           <header className="max-w-2xl">
